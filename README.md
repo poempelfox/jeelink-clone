@@ -1,9 +1,6 @@
 
 # Foxis JeeLink-clone
 
-Funkmodul RFM69HCW
-Gehaeuse BUD USB-7201-C
-
 ## Intro
 
 JeeLinks are transceivers with a microcontroller, that can be
@@ -55,8 +52,27 @@ and just collect the parcel yourself at the next customs
 office. But if there is no VAT or other taxes to be
 paid, your parcel just arrives without the ripoff.
 
-Note that this is NOT a full JeeLink clone: proper JeeLinks
-also have an extra 16 Mbit flash memory chip. That is not
-used by the LaCrosse sketch, so I don't need it, and I left
-it out.
+Note that this is NOT a full JeeLink clone. My goal
+was to have something that works with the FHEM-LaCrosse-
+Sketch so I don't have to touch that firmware. But
+apart from that, I saw no reason to stay too true to
+the original, so a few modifications have been made:
+- proper JeeLinks also have an extra 16 Mbit flash
+  memory chip. That is not used by the LaCrosse sketch,
+  so I left it out.
+- When these things come from the factory, they have
+  no bootloader that would permit programming them via
+  USB yet. So we need to use ISP, but normal-sized ISP
+  pins are way too large to fit, and I didn't want to
+  construct my own adapter. So instead, I put a
+  "Tag-Connect" 6 pin connector there that should be
+  easily temporarily attachable with one of their
+  (unfortunately very expensive) cables (I obviously
+  couldn't try it out yet).
+- I wanted the ability to attach either a wire antenna
+  (like on normal JeeLinks) or something better, so
+  it's optionally possible to solder on an SMA
+  connector.
+
+Current status: Ordered from JLCPCB, not received yet.
 

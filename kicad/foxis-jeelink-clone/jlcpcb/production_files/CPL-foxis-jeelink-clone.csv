@@ -1,0 +1,23 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+C1,10uF,C_0603_1608Metric,116.25,-143.25,0.0,top
+C10,10pF,C_0402_1005Metric,114.52,-121.25,0.0,top
+C11,10pF,C_0402_1005Metric,114.75,-126.25,180.0,top
+C2,100nF,C_0402_1005Metric,117.75,-145.75,90.0,top
+C3,100nF,C_0402_1005Metric,101.25,-127.25,-90.0,top
+C4,100nF,C_0402_1005Metric,116.25,-101.0,0.0,top
+C5,10uF,C_0603_1608Metric,103.225,-143.0,0.0,top
+C6,100nF,C_0402_1005Metric,108.25,-132.75,180.0,top
+C7,22uF,C_0603_1608Metric,116.25,-102.5,0.0,top
+C8,100nF,C_0402_1005Metric,106.5,-134.75,-90.0,top
+C9,100nF,C_0402_1005Metric,108.75,-134.75,-90.0,top
+D1,LED green,LED_0805_2012Metric,106.5,-140.0,-90.0,top
+D2,LED red,LED_0603_1608Metric,108.75,-139.75,-90.0,top
+D3,LED yellow,LED_0603_1608Metric,101.25,-124.5,-90.0,top
+R1,470Ω,R_0402_modsilkscreen,106.5,-137.0,-90.0,top
+R2,1kΩ,R_0402_modsilkscreen,108.5,-137.25,180.0,top
+R3,47kΩ,R_0402_modsilkscreen,114.25,-128.0,0.0,top
+R4,10kΩ,R_0402_modsilkscreen,106.0,-132.75,0.0,top
+R5,470Ω,R_0402_modsilkscreen,101.5,-121.75,-90.0,top
+U1,ATmega328P-A,TQFP-32_7x7mm_P0.8mm,107.5,-125.621473,90.0,top
+U2,FT232RL,SSOP-28_5.3x10.2mm_P0.65mm,114.472353,-136.596379,270.0,top
+X1,16 MHz,OSC-SMD_4P-L3.2-W2.5-BL,116.75,-123.75,180.0,top

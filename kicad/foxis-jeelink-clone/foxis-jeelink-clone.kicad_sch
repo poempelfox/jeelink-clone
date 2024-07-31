@@ -3482,6 +3482,12 @@
 		(uuid "5cac1308-d2b0-491c-b804-4041ad952402")
 	)
 	(junction
+		(at 121.92 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "620f91db-b4d5-480e-98e2-a4562d7293fc")
+	)
+	(junction
 		(at 63.5 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3584,6 +3590,12 @@
 		(uuid "ee65a1a2-c248-46be-9c52-3d1b3066bf87")
 	)
 	(junction
+		(at 124.46 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f43f2ddb-45aa-453c-9a09-778ba2359dd3")
+	)
+	(junction
 		(at 215.9 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3628,6 +3640,16 @@
 			(type default)
 		)
 		(uuid "0c0b5ee1-ac9a-4560-90b4-1b2bd97cdbda")
+	)
+	(wire
+		(pts
+			(xy 121.92 140.97) (xy 121.92 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e55c1de-21d7-4904-800c-e4f7b2ac07f4")
 	)
 	(wire
 		(pts
@@ -3748,6 +3770,16 @@
 			(type default)
 		)
 		(uuid "260e1291-eecf-40e7-a8d4-cb4368e29718")
+	)
+	(wire
+		(pts
+			(xy 121.92 73.66) (xy 53.34 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26bd52f1-ec30-4a46-acfd-01d7ecc13226")
 	)
 	(wire
 		(pts
@@ -4078,6 +4110,16 @@
 			(type default)
 		)
 		(uuid "5eaef8e3-bee9-46cd-bb7b-9aef375b9f6f")
+	)
+	(wire
+		(pts
+			(xy 124.46 143.51) (xy 124.46 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ef0c6ac-44bb-4ebc-94f3-c7946fff7a7a")
 	)
 	(wire
 		(pts
@@ -4481,6 +4523,16 @@
 	)
 	(wire
 		(pts
+			(xy 118.11 140.97) (xy 121.92 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aec9ebba-46e5-4c85-9f4e-7830b51b7065")
+	)
+	(wire
+		(pts
 			(xy 97.79 186.69) (xy 92.71 186.69)
 		)
 		(stroke
@@ -4591,6 +4643,16 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 73.66) (xy 127 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c97cd855-ebb4-4fdd-b527-243df2be1760")
+	)
+	(wire
+		(pts
 			(xy 118.11 151.13) (xy 120.65 151.13)
 		)
 		(stroke
@@ -4618,6 +4680,16 @@
 			(type default)
 		)
 		(uuid "ce73b252-4613-45f1-8965-dbb799d28c1e")
+	)
+	(wire
+		(pts
+			(xy 124.46 76.2) (xy 53.34 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d280c97e-a6a3-44cc-b277-1303c9e40d45")
 	)
 	(wire
 		(pts
@@ -4688,6 +4760,16 @@
 			(type default)
 		)
 		(uuid "e7352ea9-a54d-4f43-901e-839c5b672cd2")
+	)
+	(wire
+		(pts
+			(xy 118.11 143.51) (xy 124.46 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e759dd93-9222-470f-9159-7612777b8252")
 	)
 	(wire
 		(pts
@@ -4839,6 +4921,16 @@
 		)
 		(uuid "fe2d95aa-d733-43e4-9960-5d5e8fa864c8")
 	)
+	(wire
+		(pts
+			(xy 124.46 76.2) (xy 127 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fec61047-e0af-4a9a-9f68-b35f74f389e4")
+	)
 	(text "must not connect VCC\nto avoid reverse-powering\nthe LDO in the FT232"
 		(exclude_from_sim no)
 		(at 261.62 128.27 0)
@@ -4915,6 +5007,17 @@
 		)
 		(uuid "523916da-e82d-4f5c-a4f3-6a7086534fea")
 	)
+	(label "MC-RX"
+		(at 127 73.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "680ab5b1-369f-47a9-a0fb-7eb5b7e31b81")
+	)
 	(label "NSS"
 		(at 215.9 92.71 180)
 		(fields_autoplaced yes)
@@ -4969,6 +5072,17 @@
 			(justify left bottom)
 		)
 		(uuid "c495c1c9-278d-490e-afa3-fd05c7bd00be")
+	)
+	(label "MC-TX"
+		(at 127 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d5e42ddc-5ce9-480e-a107-5105c938312d")
 	)
 	(label "NRESET"
 		(at 55.88 68.58 0)

@@ -72,7 +72,12 @@ the original, so a few modifications have been made:
 - I wanted the ability to attach either a wire antenna
   (like on normal JeeLinks) or something better, so
   it's optionally possible to solder on an SMA
-  connector.
+  connector. However, my first tests indicate that
+  this is not worth it - it does not improve reception
+  that much, at least not in my usecases.
 
-Current status: Ordered from JLCPCB, not received yet.
+Current status: Ordered a revision 0 from JLCPCB, and
+received it. Noticed that I have made a mayor error,
+and that rev 0 is completely non-functional. Designed
+a revision 1.
 

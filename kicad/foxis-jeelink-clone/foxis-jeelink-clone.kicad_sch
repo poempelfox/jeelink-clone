@@ -4543,6 +4543,16 @@
 	)
 	(wire
 		(pts
+			(xy 204.47 128.27) (xy 204.47 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0682a28-f4fe-4f08-be8d-337b1e8f53f3")
+	)
+	(wire
+		(pts
 			(xy 54.61 186.69) (xy 63.5 186.69)
 		)
 		(stroke
@@ -4740,6 +4750,16 @@
 			(type default)
 		)
 		(uuid "e04ea99c-f21c-40d8-a857-56f47e7c2eae")
+	)
+	(wire
+		(pts
+			(xy 204.47 119.38) (xy 204.47 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e219d5f8-4e5d-4a80-bd20-9892ed8ea5e8")
 	)
 	(wire
 		(pts
@@ -5767,6 +5787,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:Earth")
+		(at 204.47 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3e12def6-1008-49d8-88c1-cef504624964")
+		(property "Reference" "#PWR016"
+			(at 204.47 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 204.47 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 204.47 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 204.47 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 204.47 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "30229918-2a95-479e-abb3-332240714a2f")
+		)
+		(instances
+			(project "foxis-jeelink-clone"
+				(path "/125d9b9f-90a8-43ae-9a7c-df8b27c5127d"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 63.5 168.91 0)
 		(unit 1)
@@ -6520,6 +6606,75 @@
 			(project "foxis-jeelink-clone"
 				(path "/125d9b9f-90a8-43ae-9a7c-df8b27c5127d"
 					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 204.47 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "715ea44c-df9b-4da8-9864-a264d3793e75")
+		(property "Reference" "C12"
+			(at 205.486 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF"
+			(at 205.232 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 205.4352 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 204.47 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 204.47 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2ba35a62-b5f9-416c-b0f3-1987347c0715")
+		)
+		(pin "2"
+			(uuid "a1461bfe-56f6-47a4-8dbc-0bbe75fd82f8")
+		)
+		(instances
+			(project "foxis-jeelink-clone"
+				(path "/125d9b9f-90a8-43ae-9a7c-df8b27c5127d"
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -7559,6 +7714,71 @@
 			(project "foxis-jeelink-clone"
 				(path "/125d9b9f-90a8-43ae-9a7c-df8b27c5127d"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 204.47 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e59fba0d-93f8-4de9-ac8f-c05e89e99473")
+		(property "Reference" "#PWR015"
+			(at 204.47 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 204.216 115.316 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 204.47 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 204.47 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 204.47 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4992e516-42dc-44be-8011-5372149f9929")
+		)
+		(instances
+			(project "foxis-jeelink-clone"
+				(path "/125d9b9f-90a8-43ae-9a7c-df8b27c5127d"
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)

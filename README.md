@@ -1,6 +1,8 @@
 
 # Foxis JeeLink-clone
 
+<img src="pics/jlc-1.jpg" alt="a picture showing a fully assembled Foxis Jeelink-clone" width="500">
+
 ## Intro
 
 JeeLinks are transceivers with a microcontroller, that can be
@@ -56,14 +58,25 @@ Note that this is NOT a full JeeLink clone. My goal
 was to have something that works with the FHEM-LaCrosse-
 Sketch so I don't have to touch that firmware. But
 apart from that, I saw no reason to stay too true to
-the original, so a few modifications have been made:
+the original,  so a few modifications have been made:
 - proper JeeLinks also have an extra 16 Mbit flash
   memory chip. That is not used by the LaCrosse sketch,
   so I left it out.
+- JeeLinks have an ultrabright blue LED that massively
+  annoyed me (I don't like getting blind from accidently
+  looking at the stick. I also don't need it to
+  illuminate the whole room.), so it was replaced with
+  a very ordinary and certainly not ultrabright yellow
+  LED.
+- this did not import the old design files (which were
+  in a very old Eagle file format that I couldn't get
+  imported) and instead started from scratch in Kicad,
+  so the positioning of things like LEDs is entirely
+  different.
 - When these things come from the factory, they have
   no bootloader that would permit programming them via
-  USB yet. So we need to use ISP, but normal-sized ISP
-  pins are way too large to fit, and I didn't want to
+  USB yet. So we need to use ISP, but a normal-sized ISP
+  connector is way too large to fit, and I didn't want to
   construct my own adapter. So instead, I put a
   "Tag-Connect" 6 pin connector there that is
   easily temporarily attachable with one of their
@@ -74,7 +87,9 @@ the original, so a few modifications have been made:
   it's optionally possible to solder on an SMA
   connector. However, my first tests indicate that
   this is not worth it - it does not improve reception
-  that much, at least not in my usecases.
+  that much, at least not in my usecases. And you
+  will have to drill a big hole into the case if
+  you want to use that.
 
 Current status: A revision 0 was ordered from JLCPCB.
 Unfortunately, it contained a very dumb mayor error,
@@ -83,6 +98,12 @@ revision 1 was ordered, that fixed the mayor flaw and
 also made some improvements to the outer dimensions
 to better fit the case. This revision seems to work
 very well. This project is now considered finished.
+
+For your entertainment, here is a picture of the
+botched repair of a revision 0 board to make it
+work:
+
+<img src="pics/botchedrepair-1.jpg" alt="a picture showing a revision 0 board that has been repaired with wire to make it work. It looks quite bad." width="500">
 
 ## Hardware
 
@@ -102,7 +123,7 @@ I was really counting on the fact that they are
 usually far better than they claim to be, and it
 worked out for me.
 
-<img src="pics/fromjlcpcb-1.jpg" alt="the board as it arrived from JLCPCB" width="500">
+<img src="pics/fromjlcpcb-1.jpg" alt="image showing the board as it arrived from JLCPCB, both the top and the bottom. Some parts are already soldered on, but it's also clearly visible that some parts are still missing." width="500">
 
 Besides the ready made boards, there are three
 additional parts that would be very expensive to
@@ -122,7 +143,7 @@ a Bud Industries USB-7201-C enclosure. (The original
 Jeelink also used either that or something that
 looked VERY similiar.)
 
-<img src="pics/fullyassembled-1.jpg" alt="the fully assembled device, without and with case" width="500">
+<img src="pics/fullyassembled-1.jpg" alt="image showing the fully assembled device, without and with a case" width="500">
 
 ## Programming
 
@@ -145,9 +166,9 @@ power the board through USB even for the ISP programming.
 You also need to make really sure your programmer is set
 to 3.3V, else you will fry the radio module.
 
-I used my trusty old STK500v2 to program Optiboot. You
-will need to adapt the below for other programmers.
-The sequence I used was:
+I used my trusty old STK500 (with v2 firmware) to
+program Optiboot. You will need to adapt the below for
+other programmers. The sequence I used was:
 
 <pre>cd optibootcheckoutdir/optiboot/bootloaders/optiboot
 make LED=B1 AVR_FREQ=16000000 BAUD_RATE=57600 LED_START_FLASHES=5 atmega328
@@ -155,6 +176,6 @@ avrdude -c stk500v2 -P /dev/ttyUSB0 -p m328p -e -u -U lock:w:0xEF:m -U efuse:w:0
 
 After that, this thing basically behaves like a normal
 Jeelink would, and flashing the main firmware on was simply
-done via USB (for avrdude this is a "arduino" programmer
-at 57600 baud).
+done via its own USB port (for avrdude this is an "arduino"
+programmer at 57600 baud).
 

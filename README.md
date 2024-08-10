@@ -65,10 +65,10 @@ the original, so a few modifications have been made:
   USB yet. So we need to use ISP, but normal-sized ISP
   pins are way too large to fit, and I didn't want to
   construct my own adapter. So instead, I put a
-  "Tag-Connect" 6 pin connector there that should be
+  "Tag-Connect" 6 pin connector there that is
   easily temporarily attachable with one of their
-  (unfortunately very expensive) cables (I obviously
-  couldn't try it out yet).
+  cables. Unfortunately, these cables are very
+  expensive, but they seem to work quite well.  
 - I wanted the ability to attach either a wire antenna
   (like on normal JeeLinks) or something better, so
   it's optionally possible to solder on an SMA
@@ -76,8 +76,85 @@ the original, so a few modifications have been made:
   this is not worth it - it does not improve reception
   that much, at least not in my usecases.
 
-Current status: Ordered a revision 0 from JLCPCB, and
-received it. Noticed that I have made a mayor error,
-and that rev 0 is completely non-functional. Designed
-a revision 1.
+Current status: A revision 0 was ordered from JLCPCB.
+Unfortunately, it contained a very dumb mayor error,
+that made it completely non-functional. So a
+revision 1 was ordered, that fixed the mayor flaw and
+also made some improvements to the outer dimensions
+to better fit the case. This revision seems to work
+very well. This project is now considered finished.
+
+## Hardware
+
+This consists of a board with an ATMEGA328P AVR,
+an FT232RL USB-to-serial converter chip, and some
+other minor parts like LEDs, caps and resistors
+that I will not list here - take a look at the
+Kicad files, or the "BOM"-file in the production
+data. This board was assembled by a cheap SMT PCB
+fab, namely JLCPCB. Note that the board is so small
+that it actually violates their recommended error
+margins in quite a few places, like distance of
+soldering pads from the edge of the board, so if
+things go badly, you might have problems with e.g.
+cut pads and you really can't complain about that.
+I was really counting on the fact that they are
+usually far better than they claim to be, and it
+worked out for me.
+
+<img src="pics/fromjlcpcb-1.jpg" alt="the board as it arrived from JLCPCB" width="500">
+
+Besides the ready made boards, there are three
+additional parts that would be very expensive to
+assemble at JLCPCB because they are not standard
+SMT parts, so these were soldered on manually
+later. These parts are:
+
+* a HopeRF RFM69CW wireless radio module
+* a Molex 48037-2200 USB (USB-A) connector
+* either a 82mm wire antenna, or an SMA connector
+  (I used Adafruit 1865) for connecting up an
+  external antenna
+
+Optional but highly recommended is also a case.
+The whole thing was designed so it fits into
+a Bud Industries USB-7201-C enclosure. (The original
+Jeelink also used either that or something that
+looked VERY similiar.)
+
+<img src="pics/fullyassembled-1.jpg" alt="the fully assembled device, without and with case" width="500">
+
+## Programming
+
+As this will arrive without any bootloader, there
+really is no way to get any firmware onto this
+thing without doing ISP programming of the AVR chip
+on the board at least once.
+
+You then have the choice to either directly program
+the main firmware you want to put on it via ISP, or
+instead program the
+["Optiboot" bootloader](https://github.com/Optiboot/optiboot),
+that will then allow you to reprogram the main firmware
+as often as you like over USB, but cost you 512 bytes
+of Flash space.
+
+Note that the 'VCC' pin on the ISP connector of the
+board is not connected. You will therefore need to
+power the board through USB even for the ISP programming.
+You also need to make really sure your programmer is set
+to 3.3V, else you will fry the radio module.
+
+I used my trusty old STK500v2 to program Optiboot. You
+will need to adapt the below for other programmers.
+The sequence I used was:
+
+<pre>cd optibootcheckoutdir/optiboot/bootloaders/optiboot
+make LED=B1 AVR_FREQ=16000000 BAUD_RATE=57600 LED_START_FLASHES=5 atmega328
+avrdude -c stk500v2 -P /dev/ttyUSB0 -p m328p -e -u -U lock:w:0xEF:m -U efuse:w:0xFD:m -U hfuse:w:0xDE:m -U lfuse:w:0xFF:m -U flash:w:optiboot_atmega328.hex -U lock:w:0xEF:m</pre>
+
+After that, this thing basically behaves like a normal
+Jeelink would, and flashing the main firmware on was simply
+done via USB (for avrdude this is a "arduino" programmer
+at 57600 baud).
 

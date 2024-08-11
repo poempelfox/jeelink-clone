@@ -141,7 +141,25 @@ Optional but highly recommended is also a case.
 The whole thing was designed so it fits into
 a Bud Industries USB-7201-C enclosure. (The original
 Jeelink also used either that or something that
-looked VERY similiar.)
+looked VERY similiar.) This enclosure does have a
+small hole at the end that is obviously intended
+to attach a lanyard, however we can abuse this to
+get the small wire antenna out of the case, and the
+soldering point for the wire antenna has been
+strategically places for this.
+Unfortunately this hole actually has a plastic tube
+going through all the way from one side to the other,
+so you'll have to break a little bit of the plastic
+to get the wire in - the picture below shows how I
+did this with a cutter. You really don't need to
+break out the whole thing, just enough for the wire
+to get through.
+
+<img src="pics/case-1.jpg" alt="image showing the USB enclosure, and a side cutter that is pointed at the location where a hole is needed to get the wire antenna out" width="500">
+
+Finally, this is how it looks like when fully assembled,
+without the enclosure on the left, and with the
+enclosure on the right:
 
 <img src="pics/fullyassembled-1.jpg" alt="image showing the fully assembled device, without and with a case" width="500">
 

@@ -133,7 +133,7 @@ later. These parts are:
 
 * a HopeRF RFM69CW wireless radio module
 * a Molex 48037-2200 USB (USB-A) connector
-* either a 82mm wire antenna, or an SMA connector
+* either a 82mm wire antenna, or a SMA connector
   (I used Adafruit 1865) for connecting up an
   external antenna
 
@@ -146,7 +146,7 @@ small hole at the end that is obviously intended
 to attach a lanyard, however we can abuse this to
 get the small wire antenna out of the case, and the
 soldering point for the wire antenna has been
-strategically places for this.
+strategically placed for this.
 Unfortunately this hole actually has a plastic tube
 going through all the way from one side to the other,
 so you'll have to break a little bit of the plastic
@@ -196,4 +196,12 @@ After that, this thing basically behaves like a normal
 Jeelink would, and flashing the main firmware on was simply
 done via its own USB port (for avrdude this is an "arduino"
 programmer at 57600 baud).
+
+## Files
+
+You can find the Kicad files in [the kicad directory of this repository](./kicad/foxis-jeelink-clone/).
+
+The production files (GERBER, BOM, CPL) that were sent to JLCPCB are in [the production_files subdirectory](./kicad/foxis-jeelink-clone/production_files/).
+
+Finally, so you don't have to open Kicad just to take a quick look, there is a PDF of the schematic and of the PCB in [the pdf directory](./pdf/). There are also two images from the 3D viewer in Kicad: [3D viewer front](./pics/foxis-jeelink-clone-3dv-front.png) [3D viewer back](./pics/foxis-jeelink-clone-3dv-back.png).
 

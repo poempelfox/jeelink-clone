@@ -201,7 +201,7 @@ programmer at 57600 baud).
 
 You can find the Kicad files in [the kicad directory of this repository](./kicad/foxis-jeelink-clone/).
 
-The production files (GERBER, BOM, CPL) that were sent to JLCPCB are in [the production_files subdirectory](./kicad/foxis-jeelink-clone/production_files/).
+The production files (GERBER, BOM, CPL) that were sent to JLCPCB are in [the jlcpcb/production_files subdirectory](./kicad/foxis-jeelink-clone/jlcpcb/production_files/).
 
 Finally, so you don't have to open Kicad just to take a quick look, there is a PDF of the schematic and of the PCB in [the pdf directory](./pdf/). There are also two images from the 3D viewer in Kicad: [3D viewer front](./pics/foxis-jeelink-clone-3dv-front.png) [3D viewer back](./pics/foxis-jeelink-clone-3dv-back.png).
 
